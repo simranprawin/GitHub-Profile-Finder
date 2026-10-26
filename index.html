@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>GitHub Profile Finder</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="logo">
+      <span class="logo-icon">◉</span>
+      GitHub Finder
+    </a>
+
+    <button id="themeButton" class="theme-button">
+      🌙
+    </button>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-badge">EXPLORE GITHUB PROFILES</div>
+
+      <h1>
+        Find.
+        <span>Explore. Connect.</span>
+      </h1>
+
+      <p>
+        Search for any GitHub user and explore their profile,
+        repositories, followers, and activity.
+      </p>
+    </section>
+
+    <section class="search-card">
+      <form id="searchForm" class="search-form">
+        <input
+          type="text"
+          id="usernameInput"
+          placeholder="Enter GitHub username..."
+          autocomplete="off"
+        />
+
+        <button type="submit" class="search-button">
+          Search
+        </button>
+      </form>
+
+      <p id="errorMessage" class="error-message"></p>
+
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <p>Loading profile...</p>
+      </div>
+
+      <section id="profileSection" class="profile-section hidden">
+        <div class="profile-header">
+          <img
+            id="avatar"
+            class="avatar"
+            src=""
+            alt="GitHub profile avatar"
+          />
+
+          <div class="profile-info">
+            <h2 id="profileName">User Name</h2>
+            <p id="profileUsername">@username</p>
+            <p id="profileBio">Profile bio</p>
+
+            <a
+              id="profileLink"
+              class="profile-link"
+              href="#"
+              target="_blank"
+              rel="noopener"
+            >
+              View GitHub Profile →
+            </a>
+          </div>
+        </div>
+
+        <div class="profile-details">
+          <p id="location" class="detail">📍 Location</p>
+          <p id="company" class="detail">🏢 Company</p>
+          <p id="joinedDate" class="detail">📅 Joined date</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat-box">
+            <strong id="followers">0</strong>
+            <span>Followers</span>
+          </div>
+
+          <div class="stat-box">
+            <strong id="following">0</strong>
+            <span>Following</span>
+          </div>
+
+          <div class="stat-box">
+            <strong id="repositories">0</strong>
+            <span>Repositories</span>
+          </div>
+
+          <div class="stat-box">
+            <strong id="gists">0</strong>
+            <span>Public Gists</span>
+          </div>
+        </div>
+
+        <div class="repositories-heading">
+          <h2>Popular Repositories</h2>
+          <span id="repositoryCount">0 repositories</span>
+        </div>
+
+        <div id="repositoryList" class="repository-list"></div>
+      </section>
+    </section>
+
+    <section class="history-card">
+      <div class="section-heading">
+        <div>
+          <h2>Recent Searches</h2>
+          <p>Your recent usernames are saved in this browser.</p>
+        </div>
+
+        <button id="clearHistoryButton" class="clear-button">
+          Clear
+        </button>
+      </div>
+
+      <div id="historyList" class="history-list">
+        <p class="empty-message">
+          No recent searches yet.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <footer>
+    <p>GitHub Profile Finder</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
